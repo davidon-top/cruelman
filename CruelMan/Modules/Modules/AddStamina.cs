@@ -9,23 +9,15 @@ namespace CruelMan.Modules {
         public override ModuleType Type => ModuleType.Stats;
 
         protected override void Init() {
-            AddSetting<NoChange>();
             AddSetting<Stamina>();
             AddSetting<SetStamina>();
         }
         protected override void OnDisable() {}
         protected override void OnEnable() {}
         protected override void OnUpdate() {
-            if (GetSetting<NoChange>().Value) {
-                FieldInfo fi = typeof(Player).GetField("m_stamina", BindingFlags.NonPublic | BindingFlags.Instance);
-                fi.SetValue(Player.m_localPlayer, GetSetting<Stamina>().Value);
-            }
+            FieldInfo fi = typeof(Player).GetField("m_stamina", BindingFlags.NonPublic | BindingFlags.Instance);
+            fi.SetValue(Player.m_localPlayer, GetSetting<Stamina>().Value);
         }
-    }
-
-    public class NoChange : BooleanSetting {
-        public override string Name => "No Change";
-        public override string Description => "Prevents stamina from changing";
     }
 
     public class Stamina : NumberSetting {

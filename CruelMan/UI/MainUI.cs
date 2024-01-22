@@ -10,7 +10,7 @@ namespace CruelMan.UI {
 
         public List<Setting> openSettings = null;
         public Module openSettingsModule = null;
-        public Rect settingsWindow = new Rect(140, 10, 220, 600);
+        public Rect settingsWindow = new Rect(880, 10, 220, 600);
 
         public Rect ModuleMovementWindow = new Rect(10, 10, 200, 500);
         public Rect ModuleStatsWindow = new Rect(220, 10, 200, 500);
@@ -22,7 +22,6 @@ namespace CruelMan.UI {
                 return;
             }
 
-            // windowRect = GUI.Window(0, windowRect, MainWindow, "CruelMan");
             ModuleMovementWindow = GUI.Window(0, ModuleMovementWindow, MainWindow, "Movement");
             ModuleStatsWindow = GUI.Window(1, ModuleStatsWindow, MainWindow, "Stats");
             ModuleCombatWindow = GUI.Window(2, ModuleCombatWindow, MainWindow, "Combat");
