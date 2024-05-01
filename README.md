@@ -4,6 +4,7 @@
 - assembly_valheim
 - BepInEx
 - UnityEngine
+
 ### Unity dlls
 - InputSystem
 - InputSystem.ForUI
